@@ -1,0 +1,212 @@
+<!doctype html>
+<!--
+Author: Ing(c) Mateo Giraldo Arboleda
+Primer Bootcamp "piscina-42" UTP sobre fullstack
+Date: 2023-01-13
+-->
+
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <title>Armemos el Pesebre de Navidad</title>
+</head>
+
+<body class="no-scroll">
+  <!-- Design for the opening modal -->
+  <div id="modal-intro" class="modal-intro">
+    <div class="modal-contenido">
+      <div class="row">
+        <img class="cardAnimation"src="img/modal-introNew.png" alt="modal" height="350px">
+      </div>
+      <div class="row">
+        <button id="btn-comenzar" class="btn-comenzar">Comenzar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Design for the game modal -->
+  <div id="modal-juego" class="modal-intro hide-modal cardAnimation">
+    <div class="modal-contenedor">
+      <div class="modal-game-contenido">
+        <div class="columnas-pesebre">
+          <!-- Animated image -->
+          <div class="columna-imagen-pesebre">
+            <img src="img/modal/baltazar.png" alt="baltazar" class="modal-baltazar">
+            <img src="img/modal/gaspar.png" alt="gaspar" class="modal-gaspar">
+            <img src="img/modal/melchor.png" alt="melchor" class="modal-melchor">
+            <img src="img/modal/maria.png" alt="maria" class="modal-maria">
+            <img src="img/modal/jesus.png" alt="jesus" class="modal-jesus">
+            <img src="img/modal/mula-buey.png" alt="mula-buey" class="modal-mula">
+            <img src="img/modal/jose.png" alt="jose" class="modal-jose">
+            <img src="img/modal/pastor.png" alt="pastor" class="modal-pastor">
+          </div>
+          <!-- Modal text content -->
+          <div class="columna-contenido">
+            <div class="modal-titulo">Sabias que</div>
+            <p id="texto">
+              <!-- Here goes the text -->
+            </p>
+            <button id="btn-juego" class="btn-comenzar">Continuar</button>
+            <img class="copo1" src="img/modal/copo.png">
+            <img class="copo2" src="img/modal/copo.png">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Final modal -->
+
+  <div id="modal-final" class="modal-intro hide-modal cardAnimation">
+    <div class="modal-contenedor">
+      <div class="modal-game-contenido">
+        <div class="columnas-pesebre">
+          <!-- Animated image -->
+          <div class="columna-imagen-pesebre"></div>
+          <!-- Modal text content -->
+          <div class="columna-contenido">
+            <div class="modal-titulo-final">Armaste tu pesebre</div>
+            <p id="parrafo-final">
+            <!-- Final modal Text -->
+              Y junto con la esperanza de la llegada del Niño Dios te deseamos de todo corazón que ese regalo que tanto has anhelado llegue a ti en esta navidad.
+              <br>
+              Felices fiestas te desea:
+            </p>
+            <img class="logo" src="img\BootCamp.png" alt="logo" height="47px">
+            <button id="btn-final" class="btn-comenzar">Volver a intentar</button>
+            <img class="copo1" src="img/modal/copo.png">
+            <img class="copo2" src="img/modal/copo.png">
+          </div>
+        </div>
+        <div class="modal__botonesCompartir">
+          <span class="modal__compartir">Compartir</span>
+          <!-- Btns to share social media -->
+          <a href="https://twitter.com/intent/tweet?text=&amp;url=https://www.escueladidactica.com/navidad/2022" target="_blank"><img src="img/modal/twitter.svg" title="Compartir en Twitter"></a>
+          <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.escueladidactica.com/navidad/2022&amp;t=" target="_blank"><img src="img/modal/facebook.svg" title="Compartir en Facebook"></a>
+          <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://www.escueladidactica.com/navidad/2022" target="_blank"><img src="img/modal/linkedin.svg" title="Compartir en Linkedin"></a>
+          <a class="btnCopy" data-clipboard-text="https://www.escueladidactica.com/navidad/2022">
+             <img src="img/modal/link.svg" title="Copiar el link">
+             <div class="footerED__linkCopy"></div>
+          </a>
+       </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Responsive header -->
+  <header>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-3 d-flex justify-content-center">
+          <img class="logo" src="img\BootCamp.png" alt="logo">
+        </div>
+        <div class="col-md-9 second-col">
+          <h1 class="header-content">Armemos el pesebre de navidad</h1>
+          <p>Como es tradición cada diciembre armamos el pesebre para esperar la llegada del Niño Dios. Presiona cada
+            tarjeta para descubrir un personaje, concéntrate y encuentra su pareja, así revelarás un personaje en el
+            pesebre y descubrirás un dato curioso sobre esta tradición de navidad.</p>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main>
+    <!-- Main game container -->
+    <div class="content">
+        <div id="game" class="game">
+          <!-- Each row contains cards generated by JavaScript randomly -->
+          <div id="1" class="row"></div>
+          <div id="2" class="row"></div>
+          <div id="3" class="row"></div>
+          <div id="4" class="row"></div>
+        </div>
+    </div>
+    <!-- Static left menu (buttons) -->
+    <div class="separador"></div>
+    <div class="left-menu">
+      <span class="left-menu-text">Compartir</span>
+      <a class="btn2-circulo" href="https://twitter.com/intent/tweet?text=&url=https://www.escueladidactica.com/navidad/2022" target="_blank" rel="noopener noreferrer"><img src="img\sharedTwitter.png" alt="twitter"></a>
+      <a class="btn2-circulo" href="https://www.facebook.com/login.php?skip_api_login=1&api_key=966242223397117&signed_next=1&next=https%3A%2F%2Fwww.facebook.com%2Fsharer%2Fsharer.php%3Fu%3Dhttps%253A%252F%252Fwww.escueladidactica.com%252Fnavidad%252F2022%26t&cancel_url=https%3A%2F%2Fwww.facebook.com%2Fdialog%2Fclose_window%2F%3Fapp_id%3D966242223397117%26connect%3D0%23_%3D_&display=popup&locale=es_ES" target="_blank" rel="noopener noreferrer"><img src="img\sharedFacebook.png" alt="facebook"></a>
+      <a class="btn2-circulo" href="https://www.linkedin.com/uas/login?session_redirect=https%3A%2F%2Fwww.linkedin.com%2FshareArticle%3Fmini%3Dtrue%26url%3Dhttps%3A%2F%2Fwww.escueladidactica.com%2Fnavidad%2F2022" target="_blank" rel="noopener noreferrer"><img src="img\sharedLinkedin.png" alt="linkein"></a>
+      <a class="btn2-circulo" href="#" target="_blank" rel="noopener noreferrer"><img src="img\shared.png" alt="copy"></a>
+    </div>
+    <div class="separador"></div>
+    <div class="left-menu-logo">
+      <p>Somos <img src="img\BootCamp.png" width="160px" height="28px" alt="logo"> y te ayudamos a transformar el aprendizaje en experiencias memorables</p>
+    </div>
+    <div class="separador" style="margin-bottom: 60px;"></div>
+  </main>
+
+  <!-- Static responsive footer -->
+  <footer>
+    <div class="container-fluid">
+      <!-- First design (resolutions greater than 1000px) -->
+      <div id="big-row" class="row">
+        <div class="col footer-content">
+          <p>Somos <img src="img\BootCamp.png" width="160px" height="28px" alt="logo"> y te ayudamos a
+            transformar el aprendizaje en experiencias memorables</p>
+        </div>
+        <!-- Empty div with variable widht (using bootstrap grid) -->
+        <div class="col-md-2"></div>
+        <div class="col d-flex justify-content-end">
+          <p id="siguenos">Síguenos</p>
+          <a class="btn-circulo" href="https://www.facebook.com/escueladidactica" target="_blank"
+            rel="noopener noreferrer"><img src="img\facebookED.png" alt="facebook"></a>
+          <a class="btn-circulo" href="https://www.instagram.com/escueladidactica/" target="_blank"
+            rel="noopener noreferrer"><img src="img\instagramED.png" alt="instagram"></a>
+          <a class="btn-circulo" href="https://co.linkedin.com/company/escueladidactica" target="_blank"
+            rel="noopener noreferrer"><img src="img\linkedinED.png" alt="instagram"></a>
+          <a class="contactenos" href="https://www.escueladidactica.com/contactanos/" target="_blank"
+            rel="noopener noreferrer">Contáctanos</a>
+        </div>
+      </div>
+
+      <!-- Second design (resolutions smaller than 1000px) -->
+      <div id="small-row" class="row">
+        <div class="col d-flex justify-content-start">
+          <p id="siguenos">Síguenos</p>
+          <a class="btn-circulo" href="https://www.facebook.com/escueladidactica" target="_blank"
+            rel="noopener noreferrer"><img src="img\facebookED.png" alt="facebook"></a>
+          <a class="btn-circulo" href="https://www.instagram.com/escueladidactica/" target="_blank"
+            rel="noopener noreferrer"><img src="img\instagramED.png" alt="instagram"></a>
+          <a class="btn-circulo" href="https://co.linkedin.com/company/escueladidactica" target="_blank"
+            rel="noopener noreferrer"><img src="img\linkedinED.png" alt="instagram"></a>
+        </div>
+        <div class="col d-flex justify-content-end">
+          <a class="contactenos" href="https://www.escueladidactica.com/contactanos/" target="_blank"
+            rel="noopener noreferrer">Contáctanos</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Template to be generated by script, contains the card structure -->
+  <template id="template-card" >
+    <div class="carta col-3 hide-modal">
+      <div class="card-inner">
+        <div class="card-face card-front"></div>
+        <div class="card-face card-back carta-estilo"></div>
+      </div>
+    </div>
+  </template>
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+</body>
+<script src="app.js"></script>
+</html>

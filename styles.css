@@ -1,0 +1,831 @@
+
+/*
+Author: Ing(c) Mateo Giraldo Arboleda
+Primer Bootcamp "piscina-42" UTP sobre fullstack
+Date: 2023-01-13
+*/
+
+@import url('https://fonts.cdnfonts.com/css/arlon');
+
+/* General classes */
+*{
+    margin: 0;
+    padding: 0;
+}
+
+/* Props for rows */
+.row{
+    margin: 0!important;
+    padding: 0!important;
+}
+
+/* definition of css variables */
+:root{
+    --fuenteTitulo: 'Arlon', sans-serif; /* Font used for the whole text in the page*/
+    --color_background: #F2D272; /* backgroundcolor for the modal */
+    --color1: #ffc042; /* another background color for modals */
+    --color2: #BC3D2E; /* Title color for modals*/
+    --colorborde: hsl(38, 77%, 59%); /* border color for modals */
+}
+
+/* class that will be invokaded in java to not let scroll */
+.no-scroll{
+    overflow-y: hidden;
+}
+
+/* paragraph props */
+p{
+    text-align: justify;
+    font-size: 1rem;
+
+}
+
+/* img props */
+
+img{
+    max-width: 100%;
+    max-height: 100%;
+}
+
+/* card animation for when it pops */
+.cardAnimation{
+    animation: zoom .5s ease backwards;
+}
+
+/* Modal intro classes props */
+.modal-intro{
+    background-color: rgba(1, 0, 0, 0.72);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    padding-top: 10%;
+    
+}
+/* modal content div to center it */
+.modal-contenido div{
+    justify-content: center;
+}
+
+/* just regular style props to make it look nice */
+
+.modal-contenedor{
+    max-height: 90%;
+    max-width: 1200px;
+    width: 96%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* just regular style props to make it look nice */
+.modal-game-contenido{
+    background-color: #fff;
+    border: 8px solid var(--color1);
+    border-radius: 15px;
+    position: relative;
+    width: 100%;
+    max-width: 1000px;
+}
+
+/* just regular style props to make it look nice */
+
+.columnas-pesebre{
+    display: grid;
+    grid-template-columns: 60% 1fr;
+    flex-direction: row;
+    background-color: #E6CE76;
+    background-image: url(img/estrellas.png);
+    background-size: 700px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-blend-mode: color-burn
+}
+
+/* Modal responsive media-query */
+@media (max-width: 992px) {
+    .columnas-pesebre {
+        grid-template-columns: 1fr;
+    }
+
+    .modal-game-contenido {
+        max-width: 550px;
+    }
+}
+
+/* Snowflake modal classes */
+.columna-contenido .copo1{
+    position: absolute;
+    bottom: 5%;
+    left: 5%;
+    width: 30px;
+    height: auto;
+    animation: 2.5s rotate alternate-reverse infinite;
+}
+
+
+/* Snowflake modal classes */
+.columna-contenido .copo2{
+    position: absolute;
+    bottom: 5%;
+    right: 5%;
+    width: 30px;
+    height: auto;
+    animation: 2.5s rotate alternate-reverse infinite;
+}
+
+/* Snowflake modal classes */
+.columna-contenido .copo1{
+    position: absolute;
+    bottom: 5%;
+    left: 5%;
+    width: 30px;
+    height: auto;
+    animation: 2.5s rotate alternate-reverse infinite;
+}
+
+/* just to make sure paragraphs are centered */
+.columna-contenido p{
+    text-align: center;
+}
+
+/* Rotating animation for 'copo1' and 'copo2' */
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Even more modal clasess but in this case images props to make it look nice */
+.columna-imagen-pesebre{
+    padding: 15px;
+    background-color: var(--color1);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    background-image: url(img/modal/escena-pesebre.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top center;
+    height: 0;
+    padding-bottom: 64%;
+    border-radius: 7px 0 0 7px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* just props for a div in a modal */
+.columna-contenido{
+    font-size: 18px;
+    padding: 10px 20px 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    background-image: url(img/modal/cinta.png), url(img/modal/bola.png), url(img/estrellas.png);/* images that are suited in the modals */
+    background-size: 18%, 30%, 100%;
+    background-position: top 7% left 4%, top right -5%;
+    background-repeat: no-repeat;
+    background-blend-mode: normal;
+    position: relative;
+}
+
+/* Cover images classes to adjust their position on the interactive image */
+.modal-baltazar{
+    position: absolute;
+    left: 25.3%;
+    top: 13.3%;
+    width: 17.7%;
+    height: 60%;
+}
+
+/* props for each card to make the silhoutte have the place it is supposed to be suited */
+.modal-gaspar{
+    position: absolute;
+    left: 40%;
+    top: 14.8%;
+    width: 19%;
+    height: 65.5%;
+}
+
+/* props for each card to make the silhoutte have the place it is supposed to be suited */
+
+.modal-melchor{
+    position: absolute;
+    left: 46.5%;
+    top: 39.3%;
+    width: 30%;
+    height: 51.2%;
+}
+/* props for each card to make the silhoutte have the place it is supposed to be suited */
+.modal-pastor{
+    position: absolute;
+    left: 69.3%;
+    top: 20%;
+    width: 18.7%;
+    height: 67%;
+}
+/* props for each card to make the silhoutte have the place it is supposed to be suited */
+.modal-jose{
+    position: absolute;
+    left: 4.8%;
+    top: 22.6%;
+    width: 16.3%;
+    height: 62.8%;
+}
+/* props for each card to make the silhoutte have the place it is supposed to be suited */
+.modal-maria{
+    position: absolute;
+    left: 1.4%;
+    top: 44.4%;
+    width: 26.6%;
+    height: 56%;
+}
+/* props for each card to make the silhoutte have the place it is supposed to be suited */
+.modal-jesus{
+    position: absolute;
+    left: 25.4%;
+    top: 68.2%;
+    width: 21.5%;
+    height: 28.8%;
+}
+/* props for each card to make the silhoutte have the place it is supposed to be suited */
+.modal-mula{
+    position: absolute;
+    left: 80%;
+    top: 40%;
+    width: 20%;
+    height: 60.2%;
+}
+
+/* Last modal props for its title*/
+.modal-titulo-final{
+    font-size: 34px;
+    font-family: "Baloo", sans-serif;
+    margin-bottom: 15px;
+    font-weight: bold;
+    color: #BC3D2E;
+    padding: 0 40px;
+    line-height: 1;
+    text-align: center;
+}
+
+/* share buttons props */
+.modal__botonesCompartir img {
+    width: 35px;
+    margin: 0 10px;
+    animation: compartir 1s infinite;
+}
+
+
+/* Share buttons props for last modal */
+.modal__botonesCompartir {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 10px 20px;
+    position: relative;
+    background-color: #07584E;
+}
+
+/* Just an additional props for last modal */
+.modal__compartir {
+    margin-right: 30px;
+    color: #fff;
+    font-size: 25px;
+}
+
+
+/* last paragraph props for the text */
+#parrafo-final{
+    font-size: 17px;
+    margin-bottom: 20px;
+    margin-top: auto;
+    color: #161b1c;
+}
+
+/* Animation that uncovers the background */
+.show-item {
+    animation: swing 1s .5s both ease, slideOutDown 1s ease 1.5s 1 normal forwards;
+    transform-origin: top center;
+}
+
+
+/* some animations copied from main source */
+@keyframes swing {
+    20% {
+        -webkit-transform: rotate3d(0, 0, 1, 15deg);
+        transform: rotate3d(0, 0, 1, 15deg);
+    }
+
+    40% {
+        -webkit-transform: rotate3d(0, 0, 1, -10deg);
+        transform: rotate3d(0, 0, 1, -10deg);
+    }
+
+    60% {
+        -webkit-transform: rotate3d(0, 0, 1, 5deg);
+        transform: rotate3d(0, 0, 1, 5deg);
+    }
+
+    80% {
+        -webkit-transform: rotate3d(0, 0, 1, -5deg);
+        transform: rotate3d(0, 0, 1, -5deg);
+    }
+
+    100% {
+        -webkit-transform: rotate3d(0, 0, 1, 0deg);
+        transform: rotate3d(0, 0, 1, 0deg);
+    }
+}
+
+/* some animations copied from main source */
+
+@keyframes slideOutDown {
+    0% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+
+    100% {
+        visibility: hidden;
+        -webkit-transform: translateY(200%);
+        transform: translateY(200%);
+    }
+}
+/* some animations copied from main source */
+@keyframes zoom {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+/* some animations copied from main source */
+@keyframes bounceIn {
+
+    0%,
+    20%,
+    40%,
+    60%,
+    80%,
+    100% {
+        animation-timing-function: cubic-bezier(.215, .61, .355, 1);
+    }
+
+    0% {
+        opacity: 0;
+        transform: scale3d(.3, .3, .3);
+    }
+
+    20% {
+        transform: scale3d(1.1, 1.1, 1.1);
+    }
+
+    40% {
+        transform: scale3d(.9, .9, .9);
+    }
+
+    60% {
+        opacity: 1;
+        transform: scale3d(1.03, 1.03, 1.03);
+    }
+
+    80% {
+        transform: scale3d(.97, .97, .97);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scaleX(1);
+    }
+}
+
+/* Title props for each modal */
+.modal-titulo{
+    font-family: var(--fuenteTitulo);
+    font-size: 32px;
+    font-weight: bold;
+    color: var(--color2);
+    margin: 15px 0 0;
+    text-align: center;
+}
+
+/* Class to hide the modals when needed */
+.hide-modal{
+    display: none;
+}
+
+
+/* some props for comenzar btn and all btns that appear in modals */
+.btn-comenzar{
+    font-size: 24px;
+    height: 40px;
+    width: 180px;
+    justify-content: center;
+    align-items: center;
+    animation: bounceIn 1.5s backwards;
+    --btnComenzar__color: white;
+    --btnComenzar__colorFondo: #ED921F;
+    --btnComenzar__colorSombra: #d77c0e;
+    background-color: var(--btnComenzar__colorFondo);
+    color: var(--btnComenzar__color);
+    font-weight: bold;
+    margin-top: 1rem;
+    border-radius: 2em;
+    border: 0px;
+    display: inline-flex;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    top: -4px;
+    box-shadow: 0 8px 0 1px var(--btnComenzar__colorSombra), 0 6px 0 1px var(--btnComenzar__colorSombra), 0 4px 0 1px var(--btnComenzar__colorSombra), 0 2px 0 1px var(--btnComenzar__colorSombra), 0 0px 0 1px var(--btnComenzar__colorSombra);
+    transition: all .3s;
+    text-decoration: none;
+}
+
+/* final button that looks red wise */
+#btn-final{
+    --btnComenzar__color: white;
+    --btnComenzar__colorFondo: #BF0000;
+    --btnComenzar__colorSombra: #840000;
+    font-size: 20px;
+    background-color: #BF0000;
+}
+
+/* props for the modal buttons to when the user hovers the mouse on these buttons */
+.btn-comenzar:hover{
+  color: var(--btnComenzar__color);
+  text-decoration: none;
+  top: 0;
+  -webkit-box-shadow: 0 4px 0 1px var(--btnComenzar__colorSombra),
+    0 2px 0 1px var(--btnComenzar__colorSombra),
+    0 0px 0 1px var(--btnComenzar__colorSombra);
+  box-shadow: 0 4px 0 1px var(--btnComenzar__colorSombra),
+    0 2px 0 1px var(--btnComenzar__colorSombra),
+    0 0px 0 1px var(--btnComenzar__colorSombra);
+
+}
+
+/* Header classes */
+
+.header-content{
+    color: #5fa3a5;
+    font-weight: bold;
+    font-size: 31px;
+    line-height: 1.2;
+    font-family: var(--fuenteTitulo);
+    width: 100%;
+
+}
+
+/* second column from page header */
+.second-col{
+    background: #e6f9f4;
+}
+
+/* Just a logo props */
+.logo{
+    border: none;
+    max-width: 100%;
+    display: block;
+    margin: auto;
+}
+
+/* Body's content classes */
+.content{
+    background-color: var(--color_background);
+    background-image: url(https://www.escueladidactica.com/navidad/2022/img/estrellas-bg.png), url(https://www.escueladidactica.com/navidad/2022/img/background.png);
+    width: 100%;
+    height: 100%;
+    padding: 3% 3% 20% 3%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+/* Card's display and size */
+.game{
+    background-color: transparent;
+    padding: 0;
+    width: 900px;
+    height: 760px;
+
+}
+
+/* Card's display and size */
+
+.game *{
+	background-color: transparent;
+	border: none;
+}
+
+
+/* Card's display and size */
+.game .row{
+    height: 25%;
+}
+
+/* invokading the other side of the card that is not the face */
+.card-front{
+    background-image: url(img/tarjeta_cubierta.png);
+    background-color: transparent;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+    height: 100%;
+}
+
+/* Specific cards with their corresponding image */
+.carta-estilo{
+    background-color: transparent;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+    height: 100%;
+    transform: rotateY(180deg);
+}
+
+/* the other side of the card */
+.maria{
+    background-image: url(img/parejas-001.png);
+}
+/* the other side of the card */
+.jose{
+    background-image: url(img/parejas-002.png);
+}
+/* the other side of the card */
+.jesus{
+    background-image: url(img/parejas-003.png);
+}
+/* the other side of the card */
+.melchor{
+    background-image: url(img/parejas-004.png);
+}
+/* the other side of the card */
+.gaspar{
+    background-image: url(img/parejas-005.png);
+}
+/* the other side of the card */
+.baltazar{
+    background-image: url(img/parejas-006.png);
+}
+/* the other side of the card */
+.pastor{
+    background-image: url(img/parejas-007.png);
+}
+/* the other side of the card */
+.mula{
+    background-image: url(img/parejas-008.png);
+}
+
+/* just some settings forced to center cards and fix its sizes */
+.carta{
+    margin: 0!important;
+    padding: 0!important;
+    height: 100%;
+    width: 23%;
+}
+
+/* Class dedicated to rotate the images on demand */
+.card-inner{
+    width: 100%;
+    height: 100%;
+    transition: transform 0.7s;
+    transform-style: preserve-3d;
+    cursor: pointer;
+    position: relative;
+}
+
+/* Actual rotating functionality */
+.card-inner.is-flipped{
+    transform: rotateY(180deg);
+}
+
+/* card-face props */
+.card-face{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    overflow: hidden;
+}
+
+/* Left menu buttons */
+.botonesizquierda{
+    position: fixed;
+    top: 50%;
+    left: 3px;
+    z-index: 100;
+    line-height: 1.5;
+}
+
+/* circle btn props */
+
+.btn2-circulo{
+    width: 31px;
+    height: 31px;
+    text-align: center;
+    opacity: 50%;
+    margin-top: auto;
+    margin-bottom: 2px;
+    margin-right: 5px;
+    position: relative;
+}
+
+/* circle btn props for when the user hovers the mouse on the btn */
+.btn2-circulo:hover{
+    opacity: 100%;
+    transition: 0.5s;
+}
+
+/* Footer classes */
+footer{
+    position: fixed;
+    z-index: 1;
+    width: 100%;
+    bottom: 0px;
+    background-color: #e6f9f4;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+/* circular btn props */
+.btn-circulo{
+    width: 31px;
+    height: 31px;
+    text-align: center;
+    opacity: 80%;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-right: 5px;
+    position: relative;
+}
+
+/* circular btn props for when the user hovers it*/
+.btn-circulo:hover{
+    color: #0056b3;
+    opacity: 100%;
+    transition: 0.5s;
+}
+
+/* siguenos text props */
+#siguenos{
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-right: 10px;
+    position: relative;
+}
+
+/* contactenos btn props */
+.contactenos{
+    background-color: #5ea4a5;
+    border-radius: 6px;
+    text-decoration: none;
+    color: #fff;
+    padding: 2px 10px 3px;
+    margin-top: auto;
+    margin-bottom: auto;
+    height: max-content;
+    opacity: 80%;
+    position: relative;
+}
+/* contactenos btn props for when the user hovers it*/
+.contactenos:hover{
+    opacity: 100%;
+    transition: 0.5s;
+    text-decoration: none;
+    color: #fff;
+}
+
+/* Show the first footer design */
+#big-row{
+    display: flex;
+}
+
+/* Hide the second footer design */
+#small-row{
+    display: none;
+}
+
+/* Left menu buttons for cellphones */
+@media (max-width: 767px){
+    .separador {
+        border-top: 1px solid #ccc;
+        max-width: 95%;
+        margin: 0 auto;
+    }
+}
+
+/* left menu for pcs */
+.left-menu{
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 50%;
+    left: 5px;
+}
+
+/* left menu text for pcs */
+.left-menu-text {
+    display: none;
+    text-align: right;
+    font-size: 18px;
+    margin-bottom: 3px;
+    color: var(--color__textoFooter);
+    padding-right: 15px;
+}
+
+/* left menu logo for pcs */
+.left-menu-logo{
+    color: #161b1c;
+    text-align: center;
+    margin: 20px auto 0px;
+    max-width: 350px;
+    padding-left: 5px;
+    padding-right: 5px;
+    display: none;
+}
+
+@media (max-width: 767px){
+    /* left menu for cellphones */
+    .left-menu {
+        display: flex;
+        flex-direction: row;
+        position: relative;
+        justify-content: flex-end;
+        align-items: center;
+        padding: 10px;
+        width: calc(100% - 20px);
+        top: auto;
+        left: auto;
+    }
+    /* left menu text for cellphones */
+    .left-menu-text{
+        display: block;
+    }
+    /* left menu logo for cellphones */
+    .left-menu-logo{
+        display: block;
+    }
+}
+
+/* Media-query that changes the footer design */
+@media(max-width:1000px){
+    /* Show the first footer design */
+    #small-row{
+        display: flex;
+    }
+    
+    /* Hide the first footer design */
+    #big-row{
+        display: none;
+    }
+} 
+
+/* making cards be responsive */
+@media (max-width: 800px){
+    .game .row{
+        width: 100%;
+        min-height: 80px;
+        max-height: 150px;
+    }
+}
+
+/* Making cards be even more responsive*/
+@media (max-width: 420px){
+    .game .row{
+        width: 100%;
+        height: 80px;
+    }
+}
